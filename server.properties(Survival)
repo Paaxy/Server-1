@@ -1,0 +1,15 @@
+# server.properties for Survival Server
+# Minecraft server properties
+gamemode=survival
+max-players=100
+spawn-protection=16
+view-distance=12
+motd=Survival Adventures Await!
+difficulty=hard
+allow-flight=false
+white-list=true
+force-gamemode=false
+level-seed=
+generator-settings=
+server-port=25566
+level-name=survival_world
