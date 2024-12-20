@@ -41,7 +41,7 @@ servers:
     online_mode: false  # Use online mode for this server
 
 ip_forward: true
-online_mode: true
+online_mode: false
 prevent_proxy_connections: false
 
 # Connection settings
