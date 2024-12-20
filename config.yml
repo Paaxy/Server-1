@@ -7,38 +7,44 @@ listeners:
     max_players: 200
     tab_list: GLOBAL_PING
     forced_hosts:
-      survival.example.com: survival   # Routing for the survival world
-      minigames.example.com: minigames # Routing for the minigames world
-      lobby.example.com: lobby         # Routing for the lobby world
+      survival.example.com: survival   # Forced routing for the survival world
+      minigames.example.com: minigames # Forced routing for the minigames world
+      lobby.example.com: lobby         # Forced routing for the lobby world
     bind_local_address: true
     ping_passthrough: false
-    priority: lobby, survival, minigames  # Priority order for connecting servers
-    default_server: lobby  # Default server when players join is lobby
+    priority: lobby, survival, minigames  # Define world priority (lobby is first)
+    default_server: lobby  # Default "world" players will join (lobby world)
     connect_timeout: 5000
     socket_timeout: 30000
     proxy_protocol: false
 
-servers:
+worlds:
   lobby:
-    address: localhost:25565   # Port for the lobby server
-    motd: "Lobby World Server"  # Message of the day for lobby
+    address: localhost:25565   # Port for the lobby world (could be the same server or different)
+    motd: "Lobby World Server"
     restricted: false
     max_players: 100
-    online_mode: false  # Use online mode for this server
-
+    online_mode: false  # Enable online mode for this world
+    allow_epk: true
+    world_directory: "worlds/lobby" # Define the directory where the world files are located
+    
   survival:
-    address: localhost:25566  # Port for the survival server
+    address: localhost:25566  # Port for the survival world
     motd: "Survival World Server"
     restricted: false
     max_players: 100
-    online_mode: false  # Use online mode for this server
+    online_mode: false
+    allow_epk: true
+    world_directory: "worlds/survival"  # Define the directory where the survival world files are located
 
   minigames:
-    address: localhost:25567  # Port for the minigames server
+    address: localhost:25567  # Port for the minigames world
     motd: "Minigames World Server"
     restricted: false
     max_players: 50
-    online_mode: false  # Use online mode for this server
+    online_mode: false
+    allow_epk: true
+    world_directory: "worlds/minigames"  # Define the directory for the minigames world
 
 ip_forward: true
 online_mode: false
@@ -84,20 +90,20 @@ admins:
   - uuid-of-admin-1
   - uuid-of-admin-2
 
-# Optional: Server aliases for easier management
+# Optional: World aliases for easier management
 aliases:
   kick: kickplayer
   stop: shutdown
 
-# Additional configuration for server management
+# Additional configuration for world management
 log_commands: true  # Log all commands run in the console
 
 # Use this section to customize custom messages or other proxy-wide settings
 messages:
   no_permission: '&cYou do not have permission to execute this command.'
   player_not_found: '&cPlayer not found on the network.'
-  server_not_found: '&cServer not found on the network.'
-  connection_error: '&cThere was an error connecting to the server.'
+  server_not_found: '&cWorld not found on the network.'
+  connection_error: '&cThere was an error connecting to the world.'
 
 # Network-wide settings
 disabled_commands:
