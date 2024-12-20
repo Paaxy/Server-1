@@ -7,9 +7,9 @@ listeners:
     max_players: 200
     tab_list: GLOBAL_PING
     forced_hosts:
-      survival.example.com: survival   # Forced routing for the survival world
-      minigames.example.com: minigames # Forced routing for the minigames world
-      lobby.example.com: lobby         # Forced routing for the lobby world
+      survival.example.com: Survival   # Forced routing for the survival world
+      minigames.example.com: Minigames # Forced routing for the minigames world
+      lobby.example.com: Lobby         # Forced routing for the lobby world
     bind_local_address: true
     ping_passthrough: false
     priority: lobby, survival, minigames  # Define world priority (lobby is first)
@@ -26,7 +26,7 @@ worlds:
     max_players: 100
     online_mode: false  # Enable online mode for this world
     allow-epk: true
-    world_directory: "worlds/lobby" # Define the directory where the world files are located
+    world_directory: "worlds/Lobby" # Define the directory where the world files are located
     
   survival:
     address: localhost:25566  # Port for the survival world
@@ -35,7 +35,7 @@ worlds:
     max_players: 100
     online_mode: false
     allow-epk: true
-    world_directory: "worlds/survival"  # Define the directory where the survival world files are located
+    world_directory: "worlds/Survival"  # Define the directory where the survival world files are located
 
   minigames:
     address: localhost:25567  # Port for the minigames world
@@ -44,7 +44,7 @@ worlds:
     max_players: 50
     online_mode: false
     allow-epk: true
-    world_directory: "worlds/minigames"  # Define the directory for the minigames world
+    world_directory: "worlds/Minigames"  # Define the directory for the minigames world
 
 ip_forward: true
 online_mode: false
