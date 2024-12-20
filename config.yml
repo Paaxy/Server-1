@@ -24,21 +24,21 @@ servers:
     motd: "Lobby World Server"  # Message of the day for lobby
     restricted: false
     max_players: 100
-    online_mode: true  # Use online mode for this server
+    online_mode: false  # Use online mode for this server
 
   survival:
     address: localhost:25566  # Port for the survival server
     motd: "Survival World Server"
     restricted: false
     max_players: 100
-    online_mode: true  # Use online mode for this server
+    online_mode: false  # Use online mode for this server
 
   minigames:
     address: localhost:25567  # Port for the minigames server
     motd: "Minigames World Server"
     restricted: false
     max_players: 50
-    online_mode: true  # Use online mode for this server
+    online_mode: false  # Use online mode for this server
 
 ip_forward: true
 online_mode: true
