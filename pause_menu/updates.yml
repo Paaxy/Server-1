@@ -1,0 +1,9 @@
+# updates.yml
+block_all_client_updates: false
+discard_login_packet_certs: false
+cert_packet_data_rate_limit: 524288
+enable_eagcert_folder: true
+download_latest_certs: true
+download_certs_from:
+  - 'https://example.com/certs'
+check_for_update_every: 28800
