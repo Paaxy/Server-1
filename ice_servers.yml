@@ -1,0 +1,9 @@
+# ice_servers.yml
+voice_servers_no_passwd:
+  - 'stun:stun.l.google.com:19302'
+  - 'stun:stun1.l.google.com:19302'
+voice_servers_passwd:
+  example_turn_server:
+    uri: 'turn:turn.example.com:3478'
+    username: 'user'
+    password: 'password'
