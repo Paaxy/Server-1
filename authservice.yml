@@ -1,0 +1,8 @@
+# authservice.yml
+enable_authentication_system: true
+use_onboard_eaglerx_system: true
+auth_db_uri: 'jdbc:sqlite:eaglercraft_auths.db'
+password_prompt_screen_text: 'Enter your password to join:'
+wrong_password_screen_text: 'Password Incorrect!'
+not_registered_screen_text: 'You are not registered on this server!'
+max_registration_per_ip: 5
