@@ -1,0 +1,23 @@
+# pause_menu/pause_menu.yml
+enable_custom_pause_menu: true
+server_info_button:
+  enable_button: true
+  button_text: 'Server Info'
+  button_mode_open_new_tab: false
+  server_info_embed_file: 'server_info.html'
+discord_button:
+  enable_button: true
+  button_text: 'Join Discord'
+  button_url: 'https://discord.gg/invite-url'
+
+---
+
+# ice_servers.yml
+voice_servers_no_passwd:
+  - 'stun:stun.l.google.com:19302'
+  - 'stun:stun1.l.google.com:19302'
+voice_servers_passwd:
+  example_turn_server:
+    uri: 'turn:turn.example.com:3478'
+    username: 'user'
+    password: 'password'
