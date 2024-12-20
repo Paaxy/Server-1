@@ -1,0 +1,15 @@
+# server.properties for Lobby Server
+# Minecraft server properties
+gamemode=adventure
+max-players=50
+spawn-protection=10
+view-distance=10
+motd=Welcome to the Lobby Server!
+difficulty=easy
+allow-flight=true
+white-list=false
+force-gamemode=true
+level-seed=
+generator-settings=
+server-port=25565
+level-name=lobby_world
