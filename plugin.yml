@@ -1,0 +1,14 @@
+name: EaglercraftEPKLoader
+version: 1.0
+main: com.yourname.eaglercraftepkloader.EaglercraftEPKLoader
+api-version: 1.13
+description: A plugin to load and manage EPK worlds for Eaglercraft servers.
+author: YourName
+commands:
+  load-epk:
+    description: Loads a specific EPK world.
+    usage: /load-epk <worldname>
+permissions:
+  epkloader.load:
+    description: Allows players to load EPK worlds.
+    default: op
