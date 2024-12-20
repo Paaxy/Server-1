@@ -1,0 +1,32 @@
+# General settings for the Bukkit server
+settings:
+  save-user-cache-on-stop: true # Saves the user cache when the server stops
+  timeout-time: 60 # Time in seconds before a player is kicked for inactivity
+
+# World configuration
+worlds:
+  world: # Default world
+    generator: default # Default world generator (can change based on your world type)
+    spawn-protection: 16 # Default spawn protection area
+  world_nether: # Nether world
+    generator: nether # Nether world generator
+    spawn-protection: 16
+  world_the_end: # End world
+    generator: end # End world generator
+    spawn-protection: 16
+
+# Commands and permissions
+permissions:
+  default:
+    - permissions.build
+    - permissions.use
+
+# Metrics
+metrics:
+  enabled: true # Enable or disable server metrics
+
+# Logging settings
+logging:
+  console: true
+  file: true
+  level: info
