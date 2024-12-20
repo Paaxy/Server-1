@@ -1,0 +1,38 @@
+# General server settings for Spigot
+settings:
+  bungeecord: true # Set to true if using BungeeCord, false if not
+  timeout-time: 60 # Time in seconds before a player is kicked for inactivity
+  max-threads: 4 # Number of threads to run for the server
+
+# Settings for commands
+commands:
+  tab-complete: 0 # Set to 0 to disable tab completion for commands
+  send-namespaced: false # Use namespaced command format
+
+# World settings
+worlds:
+  world:
+    spawn-radius: 16 # The spawn radius for the main world
+  world_nether:
+    spawn-radius: 16 # Nether spawn radius
+  world_the_end:
+    spawn-radius: 16 # End world spawn radius
+
+# Performance optimizations
+timings:
+  enabled: true # Enable performance timings
+  verbose: false # Whether or not to include detailed performance stats
+
+# Entity settings
+entities:
+  max-tick-time:
+    entity: 60000 # Max time allowed for entity ticks (in ms)
+    tile: 60000 # Max time allowed for tile entities
+  items:
+    drop:
+      max-per-tick: 1000 # Max number of item drops per tick
+    despawn-rate: 600 # Number of ticks until an item despawns
+
+# Settings for plugins and hooks
+plugin-profiling:
+  enabled: false # Enables profiling for plugins to check performance
