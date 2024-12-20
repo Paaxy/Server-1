@@ -1,0 +1,28 @@
+# listeners.yml
+listeners:
+  - address: 0.0.0.0:8081
+    max_players: 100
+    default_server: lobby
+    force_default_server: true
+    allow_motd: true
+    allow_query: true
+    server_icon: 'server-icon.png'
+    server_motd:
+      - '&6Welcome to EaglercraftXBungee!'
+      - '&7A 1.8-compatible server'
+    min_minecraft_protocol: 47
+    max_minecraft_protocol: 340
+    http_server:
+      enabled: true
+      root: 'web'
+      page_404_not_found: 'default'
+      page_index_name: ['index.html', 'index.htm']
+    ratelimit:
+      ip:
+        enable: true
+        period: 60
+        limit: 100
+      login:
+        enable: true
+        period: 60
+        limit: 10
