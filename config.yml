@@ -25,7 +25,7 @@ worlds:
     restricted: false
     max_players: 100
     online_mode: false  # Enable online mode for this world
-    allow_epk: true
+    allow-epk: true
     world_directory: "worlds/lobby" # Define the directory where the world files are located
     
   survival:
@@ -34,7 +34,7 @@ worlds:
     restricted: false
     max_players: 100
     online_mode: false
-    allow_epk: true
+    allow-epk: true
     world_directory: "worlds/survival"  # Define the directory where the survival world files are located
 
   minigames:
@@ -43,7 +43,7 @@ worlds:
     restricted: false
     max_players: 50
     online_mode: false
-    allow_epk: true
+    allow-epk: true
     world_directory: "worlds/minigames"  # Define the directory for the minigames world
 
 ip_forward: true
