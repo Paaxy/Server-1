@@ -20,7 +20,7 @@ listeners:
 
 servers:
   lobby:
-    address: localhost:25568   # Port for the lobby server
+    address: localhost:25565   # Port for the lobby server
     motd: "Lobby World Server"  # Message of the day for lobby
     restricted: false
     max_players: 100
