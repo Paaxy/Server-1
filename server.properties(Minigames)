@@ -1,0 +1,15 @@
+# server.properties for Minigames Server
+# Minecraft server properties
+gamemode=creative
+max-players=30
+spawn-protection=0
+view-distance=8
+motd=Join Our Minigames Server!
+difficulty=peaceful
+allow-flight=true
+white-list=false
+force-gamemode=true
+level-seed=
+generator-settings=
+server-port=25567
+level-name=minigames_world
