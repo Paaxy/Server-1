@@ -1,44 +1,108 @@
-# EaglercraftBungee Proxy Server Configuration
+# BungeeCord configuration file
 
-# Main proxy server port (where players connect)
-proxy-server-port: 25565  # Main entry point for players
+listeners:
+  - query_port: 25577
+    motd: 'Welcome to the BungeeCord Network!'
+    host: 0.0.0.0:25565
+    max_players: 200
+    tab_list: GLOBAL_PING
+    forced_hosts:
+      survival.example.com: survival   # Routing for the survival world
+      minigames.example.com: minigames # Routing for the minigames world
+      lobby.example.com: lobby         # Routing for the lobby world
+    bind_local_address: true
+    ping_passthrough: false
+    priority: lobby, survival, minigames  # Priority order for connecting servers
+    default_server: lobby  # Default server when players join is lobby
+    connect_timeout: 5000
+    socket_timeout: 30000
+    proxy_protocol: false
 
-# List of backend servers (worlds with different ports)
 servers:
   lobby:
-    server-name: "Lobby"
-    ip: "localhost"
-    port: 25565  # Main lobby server port
-    world-name: "Lobby"
-    game-mode: "survival"  # Game mode for lobby
-    spawn-point: "0, 64, 0"  # Spawn coordinates for lobby
-    enable-pvp: false  # PvP disabled in lobby
+    address: localhost:25568   # Port for the lobby server
+    motd: "Lobby World Server"  # Message of the day for lobby
+    restricted: false
+    max_players: 100
+    online_mode: true  # Use online mode for this server
 
   survival:
-    server-name: "Survival"
-    ip: "localhost"
-    port: 25566  # Survival world server port
-    world-name: "Survival"
-    game-mode: "survival"  # Survival mode
-    spawn-point: "100, 64, 100"  # Spawn coordinates for survival
-    enable-pvp: true  # PvP enabled in survival
+    address: localhost:25566  # Port for the survival server
+    motd: "Survival World Server"
+    restricted: false
+    max_players: 100
+    online_mode: true  # Use online mode for this server
 
   minigames:
-    server-name: "Minigames"
-    ip: "localhost"
-    port: 25567  # Minigames world server port
-    world-name: "Minigames"
-    game-mode: "adventure"  # Adventure mode for minigames
-    spawn-point: "50, 64, 50"  # Spawn coordinates for minigames
-    enable-pvp: true  # PvP enabled in minigames
+    address: localhost:25567  # Port for the minigames server
+    motd: "Minigames World Server"
+    restricted: false
+    max_players: 50
+    online_mode: true  # Use online mode for this server
 
-# Backup settings (interval for automatic backups)
-backup-interval: 1440  # 1 day (in minutes)
-backup-path: "backups"
+ip_forward: true
+online_mode: true
+prevent_proxy_connections: false
 
-# Enable EPK world support if you're using EPK files
-enable-epk-support: true
-epk-world-path: "epk_worlds"  # Directory where EPK files are stored
+# Connection settings
+connection_throttle: 4000
 
-# MOTD (Message of the Day) displayed to players when they join
-motd: "Welcome to My Eaglercraft Server!"
+# Permissions and Admins (using LuckPerms or similar)
+permissions:
+  default:
+    - bungeecord.command.server
+    - bungeecord.command.list
+    - bungeecord.command.send
+    - bungeecord.command.alert
+    - bungeecord.command.stop
+    - bungeecord.command.reload
+    - bungeecord.command.disconnect
+    - bungeecord.command.shutdown
+
+  admin:
+    permissions:
+      - bungeecord.command.server
+      - bungeecord.command.list
+      - bungeecord.command.send
+      - bungeecord.command.alert
+      - bungeecord.command.stop
+      - bungeecord.command.reload
+      - bungeecord.command.disconnect
+      - bungeecord.command.shutdown
+      - minecraft.command.kick
+      - minecraft.command.ban
+      - minecraft.command.tp
+      - minecraft.command.time
+      - minecraft.command.gamemode
+      - minecraft.command.give
+    inheritance: []
+    options:
+      prefix: '&4[Admin]&f'
+
+# Admins with full permissions can use the following commands
+admins:
+  - uuid-of-admin-1
+  - uuid-of-admin-2
+
+# Optional: Server aliases for easier management
+aliases:
+  kick: kickplayer
+  stop: shutdown
+
+# Additional configuration for server management
+log_commands: true  # Log all commands run in the console
+
+# Use this section to customize custom messages or other proxy-wide settings
+messages:
+  no_permission: '&cYou do not have permission to execute this command.'
+  player_not_found: '&cPlayer not found on the network.'
+  server_not_found: '&cServer not found on the network.'
+  connection_error: '&cThere was an error connecting to the server.'
+
+# Network-wide settings
+disabled_commands:
+  - disabledcommand1
+  - disabledcommand2
+
+# Player pinging settings
+ping_passthrough: true
