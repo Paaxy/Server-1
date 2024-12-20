@@ -1,0 +1,44 @@
+# EaglercraftBungee Proxy Server Configuration
+
+# Main proxy server port (where players connect)
+proxy-server-port: 25565  # Main entry point for players
+
+# List of backend servers (worlds with different ports)
+servers:
+  lobby:
+    server-name: "Lobby"
+    ip: "localhost"
+    port: 25565  # Main lobby server port
+    world-name: "Lobby"
+    game-mode: "survival"  # Game mode for lobby
+    spawn-point: "0, 64, 0"  # Spawn coordinates for lobby
+    enable-pvp: false  # PvP disabled in lobby
+
+  survival:
+    server-name: "Survival"
+    ip: "localhost"
+    port: 25566  # Survival world server port
+    world-name: "Survival"
+    game-mode: "survival"  # Survival mode
+    spawn-point: "100, 64, 100"  # Spawn coordinates for survival
+    enable-pvp: true  # PvP enabled in survival
+
+  minigames:
+    server-name: "Minigames"
+    ip: "localhost"
+    port: 25567  # Minigames world server port
+    world-name: "Minigames"
+    game-mode: "adventure"  # Adventure mode for minigames
+    spawn-point: "50, 64, 50"  # Spawn coordinates for minigames
+    enable-pvp: true  # PvP enabled in minigames
+
+# Backup settings (interval for automatic backups)
+backup-interval: 1440  # 1 day (in minutes)
+backup-path: "backups"
+
+# Enable EPK world support if you're using EPK files
+enable-epk-support: true
+epk-world-path: "epk_worlds"  # Directory where EPK files are stored
+
+# MOTD (Message of the Day) displayed to players when they join
+motd: "Welcome to My Eaglercraft Server!"
